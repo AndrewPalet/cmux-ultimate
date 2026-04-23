@@ -1,6 +1,12 @@
 # cmux-ultimate
 
-Complete cmux integration for Claude Code — the best of four plugins in one.
+**Complete cmux integration for Claude Code — workspace management, browser automation, multi-agent orchestration, sidebar metadata, and lifecycle hooks in one plugin.**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-1.0.0-green.svg)](CHANGELOG.md)
+[![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-orange.svg)](https://github.com/anthropics/claude-code)
+[![cmux](https://img.shields.io/badge/cmux-Terminal-blue.svg)](https://github.com/manaflow-ai/cmux)
+[![macOS](https://img.shields.io/badge/macOS-14.0+-999999.svg)](https://www.apple.com/macos/)
 
 ## Features
 
@@ -18,7 +24,7 @@ Complete cmux integration for Claude Code — the best of four plugins in one.
 ## Installation
 
 ```bash
-claude plugin marketplace add <owner>/cmux-ultimate
+claude plugin marketplace add AndrewPalet/cmux-ultimate
 claude plugin install cmux-ultimate
 ```
 
