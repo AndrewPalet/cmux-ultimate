@@ -1,0 +1,10 @@
+{
+  "name": "cmux-ultimate",
+  "description": "Complete cmux integration for Claude Code — workspace management, browser automation, multi-agent orchestration, sidebar metadata, lifecycle hooks, and full CLI reference.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Andrew Palet"
+  },
+  "license": "MIT",
+  "keywords": ["cmux", "terminal", "browser-automation", "orchestration", "notifications", "sidebar"]
+}
