@@ -62,12 +62,6 @@ cmux-ultimate/
 ├── commands/
 │   ├── open-browser.md
 │   └── status.md
-├── docs/
-│   └── superpowers/
-│       ├── plans/
-│       │   └── 2026-04-23-cmux-ultimate-plugin.md
-│       └── specs/
-│           └── 2026-04-23-cmux-ultimate-plugin-design.md
 ├── hooks/
 │   └── hooks.json
 ├── rules/
@@ -100,4 +94,4 @@ Built by combining the best from:
 
 ## License
 
-MIT
+MIT License - see LICENSE file for details
