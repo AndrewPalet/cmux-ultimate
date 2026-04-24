@@ -60,6 +60,33 @@ Commands default to the current workspace/surface when `--workspace` or `--surfa
 | rename-workspace | `cmux rename-workspace "name"` | Rename current workspace |
 | close-surface | `cmux close-surface --surface S` | Close a surface |
 
+## Browser Quick-Start
+
+When interacting with a cmux browser surface, ALWAYS follow this exact sequence:
+
+```bash
+# 1. Find the browser surface
+cmux tree
+
+# 2. Snapshot with --interactive to get element refs
+cmux browser surface:N snapshot --interactive
+
+# 3. Act using the ref directly (e.g. e3, NOT [ref=e3], NOT CSS selectors)
+cmux browser surface:N click e3
+
+# 4. Re-snapshot after any interaction (refs go stale after DOM changes)
+cmux browser surface:N snapshot --interactive
+```
+
+**Rules:**
+- ALWAYS use `snapshot --interactive` — without `--interactive` you get no refs
+- ALWAYS use bare refs (`e3`) — never `[ref=e3]` or CSS selectors
+- ALWAYS re-snapshot after clicks, navigation, or DOM changes — refs are invalidated
+- Add `wait --load-state complete --timeout-ms 10000` after navigation before re-snapshotting
+- NEVER use Chrome DevTools Protocol (CDP) — cmux uses its own browser API, not Chromium
+
+**When doing browser automation beyond basic interactions**, FIRST read `references/browser-automation.md` before running commands. It contains the full ~40 subcommand reference, auth patterns, form templates, and WKWebView limitations.
+
 ## Deep-Dive References
 
 Load these only when you need detailed syntax or advanced patterns:
@@ -67,7 +94,7 @@ Load these only when you need detailed syntax or advanced patterns:
 | Reference | When to load | Path |
 |-----------|-------------|------|
 | Complete CLI | Need full command syntax or flags | `references/complete-cli.md` |
-| Browser Automation | Automating browser surfaces | `references/browser-automation.md` |
+| Browser Automation | **MUST read before any browser work beyond quick-start** | `references/browser-automation.md` |
 | Multi-Agent Orchestration | Spawning/coordinating agents in panes | `references/orchestration.md` |
 | Notifications | Choosing notification strategy | `references/notifications.md` |
 
